@@ -13,16 +13,6 @@
   en_label: "Dossiers"
   fr_url: "/fr/dossiers/"
   en_url: "/en/dossiers/"
-- key: explainers
-  fr_label: "Explications"
-  en_label: "Explainers"
-  fr_url: "/fr/explications/"
-  en_url: "/en/explainers/"
-- key: record
-  fr_label: "Registre"
-  en_label: "The Record"
-  fr_url: "/fr/registre/"
-  en_url: "/en/record/"
 - key: methodology
   fr_label: "Méthodologie"
   en_label: "Methodology"
