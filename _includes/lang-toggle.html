@@ -1,0 +1,18 @@
+{%- comment -%}
+  Language toggle — appears on every page.
+  When the current page declares `alt_lang_url` in front matter, the
+  opposite-language button links straight to that counterpart page.
+  Otherwise it falls back to that language's home page.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- if lang == 'fr' -%}
+  {%- assign fr_href = page.url -%}
+  {%- assign en_href = page.alt_lang_url | default: '/en/' -%}
+{%- else -%}
+  {%- assign fr_href = page.alt_lang_url | default: '/fr/' -%}
+  {%- assign en_href = page.url -%}
+{%- endif -%}
+<nav class="lang-toggle" aria-label="{{ site.data.i18n[lang].language }}">
+  <a href="{{ fr_href | relative_url }}" hreflang="fr" lang="fr"{% if lang == 'fr' %} aria-current="true"{% endif %}>FR</a>
+  <a href="{{ en_href | relative_url }}" hreflang="en" lang="en"{% if lang == 'en' %} aria-current="true"{% endif %}>EN</a>
+</nav>

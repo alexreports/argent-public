@@ -1,0 +1,61 @@
+---
+layout: default
+lang: fr
+nav_key: home
+title: "Accueil"
+permalink: /fr/
+alt_lang_url: /en/
+---
+{%- assign t = site.data.i18n.fr -%}
+
+<div class="full">
+  <section class="masthead">
+    <div class="wrap measure">
+      <p class="tagline">{{ site.tagline_fr }}</p>
+      <h1>Documenter l’argent public au Québec.</h1>
+      <p class="lede">
+        Argent Public examine les dépenses publiques — énergie, transition verte
+        et administration publique — à partir du seul registre public. Chaque
+        affirmation est sourcée, liée et archivée. Aucune spéculation.
+      </p>
+    </div>
+  </section>
+</div>
+
+<section class="measure">
+  <h2>La question du moment</h2>
+  <p>
+    <em>Cet espace présentera la question centrale du moment : une dépense, une
+    décision ou un engagement public que nous documentons en ce moment.</em>
+  </p>
+</section>
+
+<section class="measure">
+  <h2>Derniers dossiers</h2>
+  {%- assign dossiers = site.dossiers | where: "lang", "fr" | sort: "date" | reverse -%}
+  {%- if dossiers.size > 0 -%}
+  <ul class="card-list">
+    {%- for d in dossiers limit: 4 -%}
+    <li>
+      {%- if d.theme -%}<span class="pill">{{ d.theme }}</span>{%- endif -%}
+      <h3><a href="{{ d.url | relative_url }}">{{ d.title }}</a></h3>
+      {%- if d.summary -%}<p>{{ d.summary }}</p>{%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  <p><a href="{{ '/fr/dossiers/' | relative_url }}">Tous les dossiers →</a></p>
+  {%- else -%}
+  <p class="text-muted"><em>Les premiers dossiers paraîtront ici.</em></p>
+  {%- endif -%}
+</section>
+
+<section class="measure">
+  <h2>Pour commencer</h2>
+  <p>
+    Lisez notre <a href="{{ '/fr/methodologie/' | relative_url }}">méthodologie</a>
+    pour comprendre comment nous travaillons, ou consultez le
+    <a href="{{ '/fr/registre/' | relative_url }}">Registre</a> des documents publics.
+    Pour rester informé, <a href="{{ '/fr/suivre/' | relative_url }}">suivez-nous par RSS</a> —
+    sans courriel, sans compte, sans pistage.
+  </p>
+</section>

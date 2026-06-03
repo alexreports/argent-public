@@ -1,0 +1,61 @@
+---
+layout: default
+lang: en
+nav_key: home
+title: "Home"
+permalink: /en/
+alt_lang_url: /fr/
+---
+{%- assign t = site.data.i18n.en -%}
+
+<div class="full">
+  <section class="masthead">
+    <div class="wrap measure">
+      <p class="tagline">{{ site.tagline_en }}</p>
+      <h1>Documenting public money in Quebec.</h1>
+      <p class="lede">
+        Argent Public examines public spending — energy, the green transition,
+        and public administration — using only the public record. Every claim is
+        sourced, linked, and archived. No speculation.
+      </p>
+    </div>
+  </section>
+</div>
+
+<section class="measure">
+  <h2>The question of the moment</h2>
+  <p>
+    <em>This space will carry the central question of the moment: a spend, a
+    decision, or a public commitment we are documenting right now.</em>
+  </p>
+</section>
+
+<section class="measure">
+  <h2>Latest dossiers</h2>
+  {%- assign dossiers = site.dossiers | where: "lang", "en" | sort: "date" | reverse -%}
+  {%- if dossiers.size > 0 -%}
+  <ul class="card-list">
+    {%- for d in dossiers limit: 4 -%}
+    <li>
+      {%- if d.theme -%}<span class="pill">{{ d.theme }}</span>{%- endif -%}
+      <h3><a href="{{ d.url | relative_url }}">{{ d.title }}</a></h3>
+      {%- if d.summary -%}<p>{{ d.summary }}</p>{%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  <p><a href="{{ '/en/dossiers/' | relative_url }}">All dossiers →</a></p>
+  {%- else -%}
+  <p class="text-muted"><em>The first dossiers will appear here.</em></p>
+  {%- endif -%}
+</section>
+
+<section class="measure">
+  <h2>Start here</h2>
+  <p>
+    Read our <a href="{{ '/en/methodology/' | relative_url }}">methodology</a> to
+    understand how we work, or browse
+    <a href="{{ '/en/record/' | relative_url }}">The Record</a> of public documents.
+    To stay informed, <a href="{{ '/en/follow/' | relative_url }}">follow us by RSS</a> —
+    no email, no account, no tracking.
+  </p>
+</section>

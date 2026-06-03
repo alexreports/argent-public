@@ -1,0 +1,15 @@
+# ============================================================
+#  Corrections log. Add an entry for every factual correction,
+#  in BOTH languages (one entry per language, set `lang`).
+#  Leave the list empty for "no corrections to date".
+#
+#  Example:
+#  - date: 2026-02-01
+#    lang: fr
+#    item: "Dossier : un contrat d’énergie"
+#    change: "Le montant a été corrigé de 10 M$ à 12 M$ après vérification du décret."
+#  - date: 2026-02-01
+#    lang: en
+#    item: "Dossier: an energy contract"
+#    change: "The amount was corrected from $10M to $12M after re-checking the decree."
+# ============================================================

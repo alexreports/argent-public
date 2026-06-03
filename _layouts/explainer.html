@@ -1,0 +1,28 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == 'fr' -%}{%- assign index_url = '/fr/explications/' -%}{%- else -%}{%- assign index_url = '/en/explainers/' -%}{%- endif -%}
+
+<article class="explainer measure">
+  <p class="meta">
+    <a href="{{ index_url | relative_url }}">{{ t.back_to_explainers }}</a>
+  </p>
+
+  <span class="pill pill--blue">{% if lang == 'fr' %}Explication{% else %}Explainer{% endif %}</span>
+  <h1>{{ page.title }}</h1>
+
+  <p class="meta">
+    {%- if page.date -%}{{ t.published }} {% include localized-date.html date=page.date lang=lang %}{%- endif -%}
+    {%- if page.updated -%}<span class="sep">·</span>{{ t.updated }} {% include localized-date.html date=page.updated lang=lang %}{%- endif -%}
+  </p>
+
+  {%- if page.summary -%}<p class="lede">{{ page.summary }}</p>{%- endif -%}
+
+  <div class="explainer-body">
+    {{ content }}
+  </div>
+
+  {% include sources.html %}
+</article>

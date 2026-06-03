@@ -1,0 +1,60 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == 'fr' -%}{%- assign index_url = '/fr/dossiers/' -%}{%- else -%}{%- assign index_url = '/en/dossiers/' -%}{%- endif -%}
+
+<article class="dossier measure">
+  <p class="meta">
+    <a href="{{ index_url | relative_url }}">{{ t.back_to_dossiers }}</a>
+  </p>
+
+  {%- if page.theme -%}<span class="pill">{{ page.theme }}</span>{%- endif -%}
+  <h1>{{ page.title }}</h1>
+
+  <p class="meta">
+    {%- if page.date -%}{{ t.published }} {% include localized-date.html date=page.date lang=lang %}{%- endif -%}
+    {%- if page.updated -%}<span class="sep">·</span>{{ t.updated }} {% include localized-date.html date=page.updated lang=lang %}{%- endif -%}
+  </p>
+
+  {%- if page.summary -%}<p class="lede">{{ page.summary }}</p>{%- endif -%}
+
+  {%- comment -%} ===== 4-part structure: Question → Evidence → Cost → Change ===== {%- endcomment -%}
+  {%- if page.question -%}
+  <section class="dossier-section">
+    <span class="dossier-section__label">{{ t.question }}</span>
+    {{ page.question | markdownify }}
+  </section>
+  {%- endif -%}
+
+  {%- if page.evidence -%}
+  <section class="dossier-section">
+    <span class="dossier-section__label">{{ t.evidence }}</span>
+    {{ page.evidence | markdownify }}
+  </section>
+  {%- endif -%}
+
+  {%- if page.cost -%}
+  <section class="dossier-section">
+    <span class="dossier-section__label">{{ t.cost }}</span>
+    {{ page.cost | markdownify }}
+  </section>
+  {%- endif -%}
+
+  {%- if page.change -%}
+  <section class="dossier-section">
+    <span class="dossier-section__label">{{ t.change }}</span>
+    {{ page.change | markdownify }}
+  </section>
+  {%- endif -%}
+
+  {%- comment -%} Free-form body (optional, for context beyond the 4 parts) {%- endcomment -%}
+  {%- if content and content != '' -%}
+  <div class="dossier-body">
+    {{ content }}
+  </div>
+  {%- endif -%}
+
+  {% include sources.html %}
+</article>

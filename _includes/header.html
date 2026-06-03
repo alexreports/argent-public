@@ -1,0 +1,31 @@
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- if lang == 'fr' -%}{%- assign home_url = '/fr/' -%}{%- else -%}{%- assign home_url = '/en/' -%}{%- endif -%}
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-logo" href="{{ home_url | relative_url }}" aria-label="{{ site.title }}">
+      <img src="{{ '/assets/images/argent-public-logo.png' | relative_url }}"
+           alt="Argent Public — {% if lang == 'fr' %}{{ site.tagline_fr }}{% else %}{{ site.tagline_en }}{% endif %}"
+           width="300">
+    </a>
+    {% include lang-toggle.html %}
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="{% if lang == 'fr' %}Navigation principale{% else %}Main navigation{% endif %}">
+  <div class="site-nav__inner">
+    <ul>
+      {%- for item in site.data.nav -%}
+        {%- if lang == 'fr' -%}
+          {%- assign url = item.fr_url -%}{%- assign label = item.fr_label -%}
+        {%- else -%}
+          {%- assign url = item.en_url -%}{%- assign label = item.en_label -%}
+        {%- endif -%}
+        <li>
+          <a href="{{ url | relative_url }}"
+             {% if page.nav_key == item.key %}aria-current="page"{% endif %}>{{ label }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</nav>

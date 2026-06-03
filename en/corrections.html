@@ -1,0 +1,37 @@
+---
+layout: default
+lang: en
+nav_key: corrections
+title: "Corrections"
+permalink: /en/corrections/
+alt_lang_url: /fr/corrections/
+---
+<div class="measure">
+  <h1>Corrections</h1>
+  <p class="lede">
+    Any factual error is corrected, dated, and explained here. Being transparent
+    about our mistakes is part of our method.
+  </p>
+
+  {%- comment -%}
+    Add corrections to _data/corrections.yml as a list of entries:
+      - date: 2026-01-15
+        item: "Title of the dossier or entry affected"
+        change: "Description of the correction made."
+        lang: en
+  {%- endcomment -%}
+  {%- assign corrections = site.data.corrections | where: "lang", "en" -%}
+  {%- if corrections and corrections.size > 0 -%}
+  <ul class="card-list">
+    {%- for c in corrections -%}
+    <li>
+      <p class="meta">{% include localized-date.html date=c.date lang="en" %}</p>
+      <h3>{{ c.item }}</h3>
+      <p>{{ c.change }}</p>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- else -%}
+  <p class="empty-state">{{ site.data.i18n.en.no_corrections }}</p>
+  {%- endif -%}
+</div>

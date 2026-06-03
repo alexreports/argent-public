@@ -1,0 +1,45 @@
+# ============================================================
+#  Primary navigation — one entry per page, with FR/EN labels
+#  and the URL for each language. `key` ties an FR page to its
+#  EN counterpart so the language toggle can link across.
+# ============================================================
+- key: home
+  fr_label: "Accueil"
+  en_label: "Home"
+  fr_url: "/fr/"
+  en_url: "/en/"
+- key: dossiers
+  fr_label: "Dossiers"
+  en_label: "Dossiers"
+  fr_url: "/fr/dossiers/"
+  en_url: "/en/dossiers/"
+- key: explainers
+  fr_label: "Explications"
+  en_label: "Explainers"
+  fr_url: "/fr/explications/"
+  en_url: "/en/explainers/"
+- key: record
+  fr_label: "Registre"
+  en_label: "The Record"
+  fr_url: "/fr/registre/"
+  en_url: "/en/record/"
+- key: methodology
+  fr_label: "Méthodologie"
+  en_label: "Methodology"
+  fr_url: "/fr/methodologie/"
+  en_url: "/en/methodology/"
+- key: about
+  fr_label: "À propos"
+  en_label: "About"
+  fr_url: "/fr/a-propos/"
+  en_url: "/en/about/"
+- key: corrections
+  fr_label: "Corrections"
+  en_label: "Corrections"
+  fr_url: "/fr/corrections/"
+  en_url: "/en/corrections/"
+- key: follow
+  fr_label: "Suivre"
+  en_label: "Follow"
+  fr_url: "/fr/suivre/"
+  en_url: "/en/follow/"

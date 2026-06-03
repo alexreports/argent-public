@@ -1,0 +1,28 @@
+{%- comment -%}
+  Renders a numbered source list with dual citation links
+  (live + archived). Define sources in page front matter:
+
+  sources:
+    - title: "Décret 1234-2024, Gazette officielle du Québec"
+      live: "https://example.gouv.qc.ca/decret-1234"
+      archived: "https://web.archive.org/web/2024.../decret-1234"
+      note: "Optional clarifying note."
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if page.sources and page.sources.size > 0 -%}
+<section class="sources" aria-labelledby="sources-heading">
+  <h2 id="sources-heading">{{ t.sources }}</h2>
+  <ol>
+    {%- for s in page.sources -%}
+    <li>
+      {{ s.title }}{% if s.note %} — <span class="text-muted">{{ s.note }}</span>{% endif %}
+      <span class="source-links">
+        {%- if s.live %} [<a href="{{ s.live }}" rel="noopener noreferrer nofollow">{{ t.live_link }}</a>]{%- endif -%}
+        {%- if s.archived %} [<a href="{{ s.archived }}" rel="noopener noreferrer nofollow">{{ t.archived_link }}</a>]{%- endif -%}
+      </span>
+    </li>
+    {%- endfor -%}
+  </ol>
+</section>
+{%- endif -%}

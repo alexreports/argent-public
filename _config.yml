@@ -1,0 +1,118 @@
+# ============================================================
+#  Argent Public — Jekyll configuration
+# ============================================================
+#  Public-record publication on Quebec public spending.
+#  French is the primary language; every page has an English
+#  counterpart. No analytics, no tracking, no cookies.
+# ============================================================
+
+# ----- Site metadata -----------------------------------------
+title: "Argent Public"
+tagline_fr: "Documenter. Comprendre. Rendre des comptes."
+tagline_en: "Document. Understand. Hold to account."
+description: >-
+  Argent Public documents public spending in Quebec — energy,
+  the green transition, and public administration — using only
+  the public record. Every claim is sourced, linked, and archived.
+description_fr: >-
+  Argent Public documente les dépenses publiques au Québec — énergie,
+  transition verte et administration publique — à partir du seul registre
+  public. Chaque affirmation est sourcée, liée et archivée.
+
+# Production URL. Update `url` to your custom domain once DNS is live.
+url: "https://argentpublic.org"
+# For GitHub Pages project sites set baseurl to "/<repo-name>".
+# For a user/organization site or a custom domain, leave it empty "".
+baseurl: ""
+
+# Contact / ownership (optional, used in footer + feeds)
+email: ""
+author: "Argent Public"
+
+# ----- Languages ---------------------------------------------
+languages: ["fr", "en"]
+default_lang: "fr"
+# Human-readable language names used by the language toggle.
+lang_names:
+  fr: "Français"
+  en: "English"
+
+# ----- Build settings ----------------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+encoding: utf-8
+timezone: America/Toronto
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# ----- Plugins (GitHub Pages compatible) ---------------------
+# NOTE: we generate our own bilingual Atom feeds (/fr/feed.xml and
+# /en/feed.xml), so jekyll-feed is intentionally NOT enabled here.
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# ----- Collections -------------------------------------------
+# Each collection holds BOTH languages. Documents declare their
+# language via front matter `lang: fr` or `lang: en`, and are
+# filtered in the listing pages.
+collections:
+  dossiers:
+    output: true
+    permalink: /:collection/:path/
+  explainers:
+    output: true
+    permalink: /:collection/:path/
+  record:
+    output: true
+    permalink: /:collection/:path/
+
+# ----- Front-matter defaults ---------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: dossiers
+    values:
+      layout: dossier
+  - scope:
+      path: ""
+      type: explainers
+    values:
+      layout: explainer
+  - scope:
+      path: ""
+      type: record
+    values:
+      layout: record_entry
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# ----- Exclusions --------------------------------------------
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - scripts
+  - templates
+  - archive_sources.py
+  - requirements.txt
+  - LICENSE
+  - .gitignore
+  - node_modules
+
+# Keep these out of the build's "pages" loop but still publish them.
+include:
+  - .nojekyll

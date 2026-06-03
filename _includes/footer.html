@@ -1,0 +1,41 @@
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <h2>{{ t.footer_about }}</h2>
+      <ul>
+        {%- for item in site.data.nav -%}
+          {%- if item.key == 'about' or item.key == 'methodology' or item.key == 'corrections' -%}
+            {%- if lang == 'fr' -%}<li><a href="{{ item.fr_url | relative_url }}">{{ item.fr_label }}</a></li>
+            {%- else -%}<li><a href="{{ item.en_url | relative_url }}">{{ item.en_label }}</a></li>{%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    <div>
+      <h2>{{ t.footer_follow }}</h2>
+      <ul>
+        {%- if lang == 'fr' -%}
+          <li><a href="{{ '/fr/suivre/' | relative_url }}">{{ t.follow_rss }}</a></li>
+          <li><a href="{{ '/fr/feed.xml' | relative_url }}">Flux RSS (FR)</a></li>
+          <li><a href="{{ '/en/' | relative_url }}" hreflang="en">English version</a></li>
+        {%- else -%}
+          <li><a href="{{ '/en/follow/' | relative_url }}">{{ t.follow_rss }}</a></li>
+          <li><a href="{{ '/en/feed.xml' | relative_url }}">RSS feed (EN)</a></li>
+          <li><a href="{{ '/fr/' | relative_url }}" hreflang="fr">Version française</a></li>
+        {%- endif -%}
+      </ul>
+    </div>
+
+    <div>
+      <h2>{{ t.footer_legal }}</h2>
+      <p class="mt-0">{{ t.rights }}</p>
+    </div>
+
+    <p class="fine">
+      © {{ 'now' | date: "%Y" }} {{ site.title }}. {{ t.no_tracking }}
+    </p>
+  </div>
+</footer>

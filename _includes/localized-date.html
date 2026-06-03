@@ -1,0 +1,13 @@
+{%- comment -%}
+  Outputs a date localized for FR or EN.
+  Usage: {% include localized-date.html date=page.date lang=page.lang %}
+  FR -> "15 janvier 2026"   EN -> "15 January 2026"
+{%- endcomment -%}
+{%- assign _lang = include.lang | default: site.default_lang -%}
+{%- if _lang == 'fr' -%}
+  {%- assign _months_fr = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," -%}
+  {%- assign _mi = include.date | date: "%-m" | minus: 1 -%}
+  {{- include.date | date: "%-d" }} {{ _months_fr[_mi] }} {{ include.date | date: "%Y" -}}
+{%- else -%}
+  {{- include.date | date: "%-d %B %Y" -}}
+{%- endif -%}

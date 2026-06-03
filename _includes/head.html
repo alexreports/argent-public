@@ -1,0 +1,40 @@
+{%- assign lang = page.lang | default: site.default_lang -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#125b38">
+
+{%- comment -%} No analytics, no tracking, no cookies — by design. {%- endcomment -%}
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="no-referrer">
+
+<title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+{%- assign desc = page.description | default: site.description -%}
+{%- if lang == 'fr' and page.description == nil -%}{%- assign desc = site.description_fr -%}{%- endif -%}
+<meta name="description" content="{{ desc | strip_newlines | strip }}">
+
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+{%- comment -%} Bilingual alternates for search engines {%- endcomment -%}
+{%- if page.alt_lang_url -%}
+<link rel="alternate" hreflang="{% if lang == 'fr' %}en{% else %}fr{% endif %}" href="{{ page.alt_lang_url | absolute_url }}">
+<link rel="alternate" hreflang="{{ lang }}" href="{{ page.url | absolute_url }}">
+{%- endif -%}
+
+{%- comment -%} RSS autodiscovery — language specific {%- endcomment -%}
+{%- if lang == 'fr' -%}
+<link rel="alternate" type="application/atom+xml" title="Argent Public — Flux (FR)" href="{{ '/fr/feed.xml' | absolute_url }}">
+{%- else -%}
+<link rel="alternate" type="application/atom+xml" title="Argent Public — Feed (EN)" href="{{ '/en/feed.xml' | absolute_url }}">
+{%- endif -%}
+
+<link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/png">
+
+{%- comment -%} Fonts: Lexend (headlines). Body uses Times New Roman (local). {%- endcomment -%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+{%- if jekyll.environment == 'production' -%}{% seo title=false %}{%- endif -%}

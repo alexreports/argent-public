@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{%- assign lang = page.lang | default: site.default_lang -%}
+<html lang="{{ lang }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">{{ site.data.i18n[lang].skip_to_content }}</a>
+  {% include header.html %}
+  <main id="main">
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == 'fr' -%}{%- assign index_url = '/fr/registre/' -%}{%- else -%}{%- assign index_url = '/en/record/' -%}{%- endif -%}
+
+<article class="record-entry measure">
+  <p class="meta">
+    <a href="{{ index_url | relative_url }}">{{ t.back_to_record }}</a>
+  </p>
+
+  <span class="pill pill--muted">{% if lang == 'fr' %}Registre{% else %}The Record{% endif %}</span>
+  <h1>{{ page.title }}</h1>
+
+  <table class="record-fields">
+    <tbody>
+      {%- if page.doc_date -%}
+      <tr><th scope="row">{{ t.date }}</th><td>{% include localized-date.html date=page.doc_date lang=lang %}</td></tr>
+      {%- endif -%}
+      {%- if page.issuer -%}
+      <tr><th scope="row">{{ t.issuer }}</th><td>{{ page.issuer }}</td></tr>
+      {%- endif -%}
+      {%- if page.live_link -%}
+      <tr><th scope="row">{{ t.live_link }}</th>
+          <td><a href="{{ page.live_link }}" rel="noopener noreferrer nofollow">{{ page.live_link }}</a></td></tr>
+      {%- endif -%}
+      {%- if page.archived_link -%}
+      <tr><th scope="row">{{ t.archived_link }}</th>
+          <td><a href="{{ page.archived_link }}" rel="noopener noreferrer nofollow">{{ page.archived_link }}</a></td></tr>
+      {%- endif -%}
+    </tbody>
+  </table>
+
+  {%- if page.description -%}
+  <div class="record-description">
+    <h2>{{ t.description }}</h2>
+    {{ page.description | markdownify }}
+  </div>
+  {%- endif -%}
+
+  {%- if content and content != '' -%}
+  <div class="record-body">{{ content }}</div>
+  {%- endif -%}
+
+  {% include sources.html %}
+</article>
