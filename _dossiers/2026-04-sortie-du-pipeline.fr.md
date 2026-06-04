@@ -6,6 +6,9 @@ slug: sortie-du-pipeline
 permalink: /fr/dossiers/sortie-du-pipeline/
 alt_lang_url: /en/dossiers/sortie-du-pipeline/
 date: 2026-04-09
+series: grand-livre-vert
+series_title: "Le Grand Livre vert"
+part: 2
 theme: "Énergie"
 summary: "Énergir a empoché environ un demi-milliard de dollars américains tirés d'infrastructures de gaz fossile. Puis, il a continué de vendre la transition verte."
 ---

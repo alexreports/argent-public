@@ -6,6 +6,9 @@ slug: sortie-du-pipeline
 permalink: /en/dossiers/sortie-du-pipeline/
 alt_lang_url: /fr/dossiers/sortie-du-pipeline/
 date: 2026-04-09
+series: grand-livre-vert
+series_title: "The Green Ledger"
+part: 2
 theme: "Energy"
 summary: "Énergir pocketed roughly half a billion US dollars from fossil gas infrastructure. Then it kept selling the green transition."
 ---

@@ -13,18 +13,111 @@ alt_lang_url: /fr/dossiers/
     the evidence, the cost, and the change sought.
   </p>
 
-  {%- assign items = site.dossiers | where: "lang", "en" | sort: "date" | reverse -%}
-  {%- if items.size > 0 -%}
-  <ul class="card-list">
-    {%- for d in items -%}
-    <li>
-      {%- if d.theme -%}<span class="pill">{{ d.theme }}</span>{%- endif -%}
-      <h3><a href="{{ d.url | relative_url }}">{{ d.title }}</a></h3>
-      {%- if d.date -%}<p class="meta">{% include localized-date.html date=d.date lang=page.lang %}</p>{%- endif -%}
-      {%- if d.summary -%}<p>{{ d.summary }}</p>{%- endif -%}
-    </li>
+  {%- assign all_dossiers = site.dossiers | where: "lang", "en" -%}
+  {%- if all_dossiers.size > 0 -%}
+
+  {%- comment -%}
+    Build a list of unique series, ordered by the newest dossier in each series.
+    Dossiers without a series field are grouped under "standalone".
+  {%- endcomment -%}
+
+  {%- assign series_list = "" -%}
+  {%- assign series_dates = "" -%}
+  {%- for d in all_dossiers -%}
+    {%- assign s = d.series | default: "standalone" -%}
+    {%- unless series_list contains s -%}
+      {%- if series_list == "" -%}
+        {%- assign series_list = s -%}
+        {%- assign series_dates = d.date | date: "%Y%m%d" -%}
+      {%- else -%}
+        {%- assign series_list = series_list | append: "|" | append: s -%}
+        {%- assign series_dates = series_dates | append: "|" | append: d.date | date: "%Y%m%d" -%}
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+
+  {%- assign series_arr = series_list | split: "|" -%}
+
+  {%- comment -%}
+    Sort series by their latest date (newest first).
+    We collect the max date for each series, then sort descending.
+  {%- endcomment -%}
+  {%- assign series_with_dates = "" -%}
+  {%- for s in series_arr -%}
+    {%- assign max_date = "00000000" -%}
+    {%- for d in all_dossiers -%}
+      {%- assign ds = d.series | default: "standalone" -%}
+      {%- if ds == s -%}
+        {%- assign d_str = d.date | date: "%Y%m%d" -%}
+        {%- if d_str > max_date -%}
+          {%- assign max_date = d_str -%}
+        {%- endif -%}
+      {%- endif -%}
     {%- endfor -%}
-  </ul>
+    {%- if series_with_dates == "" -%}
+      {%- assign series_with_dates = max_date | append: ":" | append: s -%}
+    {%- else -%}
+      {%- assign series_with_dates = series_with_dates | append: "|" | append: max_date | append: ":" | append: s -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- assign sorted_pairs = series_with_dates | split: "|" | sort | reverse -%}
+
+  {%- for pair in sorted_pairs -%}
+    {%- assign s = pair | split: ":" | last -%}
+
+    {%- comment -%} Collect dossiers in this series, sorted by part number {%- endcomment -%}
+    {%- assign in_series = "" | split: "" -%}
+    {%- for d in all_dossiers -%}
+      {%- assign ds = d.series | default: "standalone" -%}
+      {%- if ds == s -%}
+        {%- assign in_series = in_series | push: d -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign in_series = in_series | sort: "part" -%}
+
+    {%- comment -%} Get series title from first dossier that has one {%- endcomment -%}
+    {%- assign s_title = nil -%}
+    {%- assign s_theme = nil -%}
+    {%- for d in in_series -%}
+      {%- if d.series_title and s_title == nil -%}{%- assign s_title = d.series_title -%}{%- endif -%}
+      {%- if d.theme and s_theme == nil -%}{%- assign s_theme = d.theme -%}{%- endif -%}
+    {%- endfor -%}
+
+    {%- if s_title -%}
+    <div class="series-group">
+      <div class="series-header">
+        {%- if s_theme -%}<span class="pill">{{ s_theme }}</span>{%- endif -%}
+        <h2>{{ s_title }}</h2>
+        <p class="meta">{{ in_series.size }} parts</p>
+      </div>
+      <ol class="series-parts">
+        {%- for d in in_series -%}
+        <li>
+          <a href="{{ d.url | relative_url }}">
+            <span class="series-part-num">Part {{ d.part }}</span>
+            <span class="series-part-title">{{ d.title | remove: s_title | remove: ", Part " | remove_first: d.part | remove_first: ": " | strip }}</span>
+          </a>
+          {%- if d.summary -%}<p class="series-part-summary">{{ d.summary }}</p>{%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ol>
+    </div>
+    {%- else -%}
+      {%- comment -%} Standalone dossiers (no series) {%- endcomment -%}
+      {%- for d in in_series -%}
+      <div class="series-group">
+        <div class="series-header">
+          {%- if d.theme -%}<span class="pill">{{ d.theme }}</span>{%- endif -%}
+          <h2><a href="{{ d.url | relative_url }}">{{ d.title }}</a></h2>
+          {%- if d.date -%}<p class="meta">{% include localized-date.html date=d.date lang=page.lang %}</p>{%- endif -%}
+        </div>
+        {%- if d.summary -%}<p>{{ d.summary }}</p>{%- endif -%}
+      </div>
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+
   {%- else -%}
   <p class="text-muted"><em>The first dossiers will appear here soon.</em></p>
   {%- endif -%}

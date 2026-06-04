@@ -6,6 +6,9 @@ slug: fracturation
 permalink: /en/dossiers/fracturation/
 alt_lang_url: /fr/dossiers/fracturation/
 date: 2026-04-08
+series: grand-livre-vert
+series_title: "The Green Ledger"
+part: 1
 theme: "Energy"
 summary: "Quebec banned fracking. Then kept buying its product."
 ---

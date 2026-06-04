@@ -277,6 +277,59 @@ main .wrap > .full { max-width: none; }
 .card-list h3 a:hover { color: var(--blue); }
 .card-list p { margin: 0.3rem 0 0; color: var(--ink); }
 
+/* ---------- Series groups (dossiers page) ---------- */
+.series-group {
+  margin: 2.5rem 0 0;
+  padding: 0 0 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+.series-group:first-of-type { margin-top: 1.5rem; }
+.series-group:last-of-type { border-bottom: none; }
+.series-header { margin-bottom: 1rem; }
+.series-header h2 {
+  margin: 0.3rem 0 0.1rem;
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.4rem;
+  color: var(--green);
+}
+.series-header .meta { margin: 0; }
+.series-parts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: part;
+}
+.series-parts > li {
+  padding: 0.9rem 0 0.9rem 0;
+  border-top: 1px solid var(--rule);
+}
+.series-parts > li a {
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.series-parts > li a:hover { color: var(--blue); }
+.series-part-num {
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--green);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.series-part-title {
+  font-size: 1.05rem;
+}
+.series-part-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
 /* ---------- Question of the moment (featured homepage box) ---------- */
 .question-moment {
   margin: 2.4rem 0;

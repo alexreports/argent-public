@@ -6,6 +6,9 @@ slug: ecart-des-quotas
 permalink: /fr/dossiers/ecart-des-quotas/
 alt_lang_url: /en/dossiers/ecart-des-quotas/
 date: 2026-04-10
+series: grand-livre-vert
+series_title: "Le Grand Livre vert"
+part: 3
 theme: "Énergie"
 summary: "Le Québec a imposé des cibles obligatoires de gaz renouvelable par règlement. Le distributeur les rate de loin. Le gaz de schiste reste dans les conduits."
 ---

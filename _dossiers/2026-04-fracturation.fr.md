@@ -6,6 +6,9 @@ slug: fracturation
 permalink: /fr/dossiers/fracturation/
 alt_lang_url: /en/dossiers/fracturation/
 date: 2026-04-08
+series: grand-livre-vert
+series_title: "Le Grand Livre vert"
+part: 1
 theme: "Énergie"
 summary: "Le Québec a interdit la fracturation (fracking). Puis a continué d'en acheter le produit."
 ---

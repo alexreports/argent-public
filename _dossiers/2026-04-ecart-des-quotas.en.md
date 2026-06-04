@@ -6,6 +6,9 @@ slug: ecart-des-quotas
 permalink: /en/dossiers/ecart-des-quotas/
 alt_lang_url: /fr/dossiers/ecart-des-quotas/
 date: 2026-04-10
+series: grand-livre-vert
+series_title: "The Green Ledger"
+part: 3
 theme: "Energy"
 summary: "Quebec imposed mandatory renewable gas targets by regulation. The distributor misses them by a wide margin. Shale gas stays in the pipes."
 ---
