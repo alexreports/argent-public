@@ -44,5 +44,5 @@ Cette question a une réponse documentée dans le dossier public. C'est pourquoi
 
 Tout ce qui est publié sous mon nom remonte à des documents publics: procédures judiciaires, dossiers réglementaires, ententes signées et règles officielles de programme. Le but n'est pas d'accuser. Il est de documenter, de rendre compréhensible une histoire complexe de finances publiques, et de poser les questions que le dossier public rend incontournables.
 
-Paul Sauvé
+Paul Sauvé  
 Producteur agricole, fondateur de GNR Shefford

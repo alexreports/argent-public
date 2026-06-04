@@ -44,5 +44,5 @@ That question has a documented answer in the public record. It is why I have cho
 
 Everything published under my name traces back to public documents: court filings, regulatory records, signed agreements, and official program rules. The aim is not to accuse. It is to document, to make a complex public-finance story understandable, and to ask the questions the public record makes unavoidable.
 
-Paul Sauvé
+Paul Sauvé  
 Agricultural producer, founder of GNR Shefford
