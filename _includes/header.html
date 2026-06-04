@@ -4,8 +4,8 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="site-logo" href="{{ home_url | relative_url }}" aria-label="{{ site.title }}">
-      <img src="{{ '/assets/images/argent-public-logo.png' | relative_url }}"
-           alt="Argent Public — {% if lang == 'fr' %}{{ site.tagline_fr }}{% else %}{{ site.tagline_en }}{% endif %}"
+      <img src="{{ '/assets/images/logo.png' | relative_url }}"
+           alt="{% if lang == 'fr' %}Argent Public — Accueil{% else %}Argent Public — Home{% endif %}"
            width="300">
     </a>
     {% include lang-toggle.html %}
