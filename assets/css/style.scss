@@ -277,6 +277,49 @@ main .wrap > .full { max-width: none; }
 .card-list h3 a:hover { color: var(--blue); }
 .card-list p { margin: 0.3rem 0 0; color: var(--ink); }
 
+/* ---------- Question of the moment (featured homepage box) ---------- */
+.question-moment {
+  margin: 2.4rem 0;
+  padding: 1.8rem 2rem;
+  background: var(--bg-quote);
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--green);
+}
+.question-moment__label {
+  display: block;
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green);
+  margin: 0 0 0.6rem;
+}
+.question-moment h2 {
+  margin: 0 0 0.6rem;
+  border: 0;
+  padding: 0;
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+.question-moment h2 a {
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+.question-moment h2 a:hover,
+.question-moment h2 a:focus { color: var(--green); }
+.question-moment p { margin: 0.6rem 0 0; }
+.question-moment .question-moment__cta {
+  margin-top: 1rem;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+}
+.question-moment .question-moment__cta a {
+  font-weight: 600;
+  text-decoration: none;
+}
+.question-moment .question-moment__cta a:hover { text-decoration: underline; }
+
 /* ---------- Dossier 4-part structure ---------- */
 .dossier-section {
   margin: 2.2rem 0;
