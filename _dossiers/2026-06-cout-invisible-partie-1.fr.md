@@ -1,19 +1,27 @@
 ---
 layout: dossier
-title: "Le coût invisible"
-subtitle: "Première partie. Le scénario que le Québec répète, et l'organisme de surveillance qui a fini par le nommer"
 lang: fr
-ref: cout-invisible-1
+title: "Le coût invisible, partie 1 : Le scénario que le Québec répète"
+slug: cout-invisible-partie-1
+permalink: /fr/dossiers/cout-invisible-partie-1/
+alt_lang_url: /en/dossiers/cout-invisible-partie-1/
 date: 2026-06-04
+theme: "Gouvernance"
+summary: "Les grands projets technologiques publics échouent toujours de la même manière — et l'organisme de surveillance du Québec l'a maintenant écrit noir sur blanc."
+ref: cout-invisible-1
 series: cout-invisible
 series_title: "Le coût invisible"
 part: 1
 author: "Paul Sauvé"
 sources:
-  - https://www.amp.quebec/communique/veille-sur-les-pratiques-de-realisation-et-la-performance-des-projets-numeriques-publics-du-gouvernement-du-quebec
-  - https://www.quebec.ca/nouvelles/actualites/details/projets-de-transformation-numerique-du-gouvernement-du-quebec-des-changements-de-gouvernance-et-dencadrement-simposent-70413
-  - https://www.ledevoir.com/politique/quebec/956649/rapport-commission-gallant-5-chiffres
-  - https://www.lapresse.ca/actualites/2026-02-16/rapport-gallant-sur-le-fiasco-saaqclic/la-saaq-a-menti-quebec-etait-informe-de-depassements-de-couts.php
+  - title: "Autorité des marchés publics — Veille sur les pratiques de réalisation et la performance des projets numériques publics du gouvernement du Québec (communiqué)"
+    live: "https://www.amp.quebec/communique/veille-sur-les-pratiques-de-realisation-et-la-performance-des-projets-numeriques-publics-du-gouvernement-du-quebec"
+  - title: "Gouvernement du Québec — Projets de transformation numérique : des changements de gouvernance et d'encadrement s'imposent"
+    live: "https://www.quebec.ca/nouvelles/actualites/details/projets-de-transformation-numerique-du-gouvernement-du-quebec-des-changements-de-gouvernance-et-dencadrement-simposent-70413"
+  - title: "Le Devoir — Rapport de la Commission Gallant : cinq chiffres"
+    live: "https://www.ledevoir.com/politique/quebec/956649/rapport-commission-gallant-5-chiffres"
+  - title: "La Presse — Rapport Gallant sur le fiasco SAAQclic : la SAAQ a menti, Québec était informé des dépassements de coûts"
+    live: "https://www.lapresse.ca/actualites/2026-02-16/rapport-gallant-sur-le-fiasco-saaqclic/la-saaq-a-menti-quebec-etait-informe-de-depassements-de-couts.php"
 ---
 
 Les grands projets technologiques publics échouent au Québec toujours de la même manière, sous des gouvernements et des partis différents. Ce n'est plus une affirmation portée par des critiques. C'est la conclusion écrite des propres organismes de surveillance de la province, consignée dans deux rapports en l'espace d'une seule année.

@@ -1,19 +1,27 @@
 ---
 layout: dossier
-title: "The Cost You Cannot See"
-subtitle: "Part One. The pattern Quebec keeps repeating, and the watchdog that finally named it"
 lang: en
-ref: cout-invisible-1
+title: "The Cost You Cannot See, Part 1: The Pattern Quebec Keeps Repeating"
+slug: cout-invisible-partie-1
+permalink: /en/dossiers/cout-invisible-partie-1/
+alt_lang_url: /fr/dossiers/cout-invisible-partie-1/
 date: 2026-06-04
+theme: "Governance"
+summary: "Large public technology projects keep failing the same way — and Quebec's own watchdog has now said so in writing."
+ref: cout-invisible-1
 series: cout-invisible
 series_title: "The Cost You Cannot See"
 part: 1
 author: "Paul Sauvé"
 sources:
-  - https://www.amp.quebec/communique/veille-sur-les-pratiques-de-realisation-et-la-performance-des-projets-numeriques-publics-du-gouvernement-du-quebec
-  - https://www.quebec.ca/nouvelles/actualites/details/projets-de-transformation-numerique-du-gouvernement-du-quebec-des-changements-de-gouvernance-et-dencadrement-simposent-70413
-  - https://www.ledevoir.com/politique/quebec/956649/rapport-commission-gallant-5-chiffres
-  - https://www.lapresse.ca/actualites/2026-02-16/rapport-gallant-sur-le-fiasco-saaqclic/la-saaq-a-menti-quebec-etait-informe-de-depassements-de-couts.php
+  - title: "Autorité des marchés publics — Surveillance of practices and performance of the Quebec government's public digital projects (news release)"
+    live: "https://www.amp.quebec/communique/veille-sur-les-pratiques-de-realisation-et-la-performance-des-projets-numeriques-publics-du-gouvernement-du-quebec"
+  - title: "Gouvernement du Québec — Digital transformation projects: governance and oversight changes are needed"
+    live: "https://www.quebec.ca/nouvelles/actualites/details/projets-de-transformation-numerique-du-gouvernement-du-quebec-des-changements-de-gouvernance-et-dencadrement-simposent-70413"
+  - title: "Le Devoir — Commission Gallant report: five numbers"
+    live: "https://www.ledevoir.com/politique/quebec/956649/rapport-commission-gallant-5-chiffres"
+  - title: "La Presse — Gallant report on the SAAQclic fiasco: the SAAQ misled, Quebec was informed of cost overruns"
+    live: "https://www.lapresse.ca/actualites/2026-02-16/rapport-gallant-sur-le-fiasco-saaqclic/la-saaq-a-menti-quebec-etait-informe-de-depassements-de-couts.php"
 ---
 
 Large public technology projects in Quebec keep failing in the same ways, across different governments and different parties. That is no longer a claim made by critics. It is the written conclusion of the province's own oversight bodies, set down in two reports in the space of a single year.
