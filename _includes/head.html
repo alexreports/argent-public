@@ -7,6 +7,16 @@
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="no-referrer">
 
+{%- comment -%}
+  Security hardening (defense-in-depth). GitHub Pages cannot send custom HTTP
+  response headers, so policies that only work as real headers (HSTS,
+  X-Frame-Options, X-Content-Type-Options) are enforced where possible:
+  HSTS is handled by the "Enforce HTTPS" GitHub Pages setting (redirect),
+  and frame protection is declared via CSP frame-ancestors below.
+  This is a static, no-JS, no-cookie site: only self assets + Google Fonts load.
+{%- endcomment -%}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+
 <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
 {%- assign desc = page.description | default: site.description -%}
