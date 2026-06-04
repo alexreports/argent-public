@@ -328,6 +328,49 @@ main .wrap > .full { max-width: none; }
   white-space: nowrap;
 }
 
+/* ---------- Content tables (dossiers, explainers, prose) ---------- */
+/* Markdown tables in body content render as a bare <table>; style them
+   to match the newspaper aesthetic and stay readable on small screens. */
+.dossier-body table,
+.explainer-body table,
+.page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.8rem 0;
+  font-family: var(--font-head);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+.dossier-body thead th,
+.explainer-body thead th,
+.page thead th {
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--green);
+  text-align: left;
+  vertical-align: bottom;
+}
+.dossier-body th,
+.dossier-body td,
+.explainer-body th,
+.explainer-body td,
+.page th,
+.page td {
+  padding: 0.55em 0.8em;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--rule);
+}
+.dossier-body tbody tr:nth-child(even),
+.explainer-body tbody tr:nth-child(even),
+.page tbody tr:nth-child(even) {
+  background: var(--bg-alt);
+}
+/* Allow horizontal scrolling rather than squishing on narrow screens. */
+.dossier-body table,
+.explainer-body table,
+.page table { display: table; }
+
 /* ---------- Callout / note ---------- */
 .note {
   border: 1px solid var(--rule);
