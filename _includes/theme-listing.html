@@ -1,0 +1,37 @@
+{%- comment -%}
+  Shared body for theme filter pages.
+  Expects page front matter:
+    lang, theme_filter (matches dossier `theme:`), theme_lede
+{%- endcomment -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+<div class="measure">
+  <p class="meta">
+    {%- if page.lang == 'fr' -%}
+      <a href="{{ '/fr/dossiers/' | relative_url }}">← Tous les dossiers</a>
+    {%- else -%}
+      <a href="{{ '/en/dossiers/' | relative_url }}">← All dossiers</a>
+    {%- endif -%}
+  </p>
+  <h1>{{ page.title | remove_first: "Thème : " | remove_first: "Theme: " }}</h1>
+  {%- if page.theme_lede -%}<p class="lede">{{ page.theme_lede }}</p>{%- endif -%}
+
+  {%- assign items = site.dossiers | where: "lang", page.lang | where: "theme", page.theme_filter | sort: "date" | reverse -%}
+  {%- if items.size > 0 -%}
+  <ul class="card-list">
+    {%- for d in items -%}
+    <li>
+      {%- if d.theme -%}<span class="pill">{{ d.theme }}</span>{%- endif -%}
+      <h3><a href="{{ d.url | relative_url }}">{{ d.title }}</a></h3>
+      {%- if d.date -%}<p class="meta">{% include localized-date.html date=d.date lang=page.lang %}</p>{%- endif -%}
+      {%- if d.summary -%}<p>{{ d.summary }}</p>{%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- else -%}
+    {%- if page.lang == 'fr' -%}
+    <p class="text-muted"><em>Aucun dossier publié dans ce thème pour le moment.</em></p>
+    {%- else -%}
+    <p class="text-muted"><em>No dossiers published under this theme yet.</em></p>
+    {%- endif -%}
+  {%- endif -%}
+</div>

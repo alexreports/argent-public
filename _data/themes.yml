@@ -1,0 +1,32 @@
+# ============================================================
+#  Thematic index — the systemic themes Argent Public covers.
+#  `fr_theme` / `en_theme` MUST match the `theme:` value used
+#  in dossier front matter so the theme pages can filter on it.
+# ============================================================
+- key: energie
+  fr_label: "Énergie"
+  en_label: "Energy"
+  fr_url: "/fr/themes/energie/"
+  en_url: "/en/themes/energy/"
+  fr_theme: "Énergie"
+  en_theme: "Energy"
+  fr_desc: "Transition verte, gaz fossile et cibles réglementaires."
+  en_desc: "The green transition, fossil gas, and regulatory targets."
+- key: gouvernance
+  fr_label: "Gouvernance"
+  en_label: "Governance"
+  fr_url: "/fr/themes/gouvernance/"
+  en_url: "/en/themes/governance/"
+  fr_theme: "Gouvernance"
+  en_theme: "Governance"
+  fr_desc: "Surveillance, reddition de comptes et gestion des grands projets."
+  en_desc: "Oversight, accountability, and the management of major projects."
+- key: administration-publique
+  fr_label: "Administration publique"
+  en_label: "Public administration"
+  fr_url: "/fr/themes/administration-publique/"
+  en_url: "/en/themes/public-administration/"
+  fr_theme: "Administration publique"
+  en_theme: "Public administration"
+  fr_desc: "Marchés publics, contrats et services aux citoyens."
+  en_desc: "Public procurement, contracts, and services to citizens."

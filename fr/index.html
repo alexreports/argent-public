@@ -8,63 +8,128 @@ alt_lang_url: /en/
 ---
 {%- assign t = site.data.i18n.fr -%}
 
+{%- comment -%} 2. Identity block — one clear sentence on what makes us different {%- endcomment -%}
 <div class="full">
   <section class="masthead">
     <div class="wrap measure">
       <p class="tagline">{{ site.tagline_fr }}</p>
       <h1>Documenter l’argent public au Québec.</h1>
       <p class="lede">
-        Argent Public examine les dépenses publiques — énergie, transition verte
-        et administration publique — à partir du seul registre public. Chaque
-        affirmation est sourcée, liée et archivée. Aucune spéculation.
+        Argent Public enquête sur les dépenses publiques à partir du seul registre
+        public : chaque affirmation est sourcée, liée et archivée — sans spéculation,
+        sans pistage.
       </p>
     </div>
   </section>
 </div>
 
+{%- comment -%} 3. Single featured investigation — one lead, start at Part 1 {%- endcomment -%}
 <section class="measure">
   <div class="question-moment">
-    <span class="question-moment__label">La question du moment</span>
+    <span class="question-moment__label">Enquête en cours</span>
     <h2><a href="{{ '/fr/dossiers/cout-invisible-partie-1/' | relative_url }}">Le coût invisible : pourquoi les grands projets publics échouent toujours de la même manière</a></h2>
     <p>
       Les grands projets technologiques publics du Québec échouent de façon répétée,
-      selon les mêmes schémas, sous différents gouvernements. Ce n'est plus une
-      affirmation de critiques — c'est la conclusion écrite des propres organismes
-      de surveillance de la province. En 2026, deux rapports majeurs (l'Autorité des
-      marchés publics et la Commission Gallant) ont documenté les mêmes lacunes
-      structurelles. À quatre mois d'une élection générale, notre série
+      selon les mêmes schémas, sous différents gouvernements. Ce n’est plus une
+      affirmation de critiques — c’est la conclusion écrite des propres organismes de
+      surveillance de la province. À quatre mois d’une élection générale, notre série
       <em>Le coût invisible</em> met ces questions au dossier public.
     </p>
     <p class="question-moment__cta">
-      <a href="{{ '/fr/dossiers/cout-invisible-partie-1/' | relative_url }}">Lire la partie 1 : Le scénario que le Québec répète →</a>
+      <a href="{{ '/fr/dossiers/cout-invisible-partie-1/' | relative_url }}">Commencez ici — Partie 1 : Le scénario que le Québec répète →</a>
     </p>
   </div>
 </section>
 
+{%- comment -%} 4. Series block — all three parts together, in reading order {%- endcomment -%}
 <section class="measure">
-  <h2>Derniers dossiers</h2>
-  {%- assign dossiers = site.dossiers | where: "lang", "fr" | sort: "date" | reverse -%}
-  {%- if dossiers.size > 0 -%}
+  {%- assign series_parts = site.dossiers | where: "lang", "fr" | where: "series", "cout-invisible" | sort: "part" -%}
+  {%- if series_parts.size > 0 -%}
+  {%- assign s_title = series_parts[0].series_title -%}
+  <div class="series-group series-group--featured">
+    <div class="series-header">
+      {%- if series_parts[0].theme -%}<span class="pill">{{ series_parts[0].theme }}</span>{%- endif -%}
+      <h2>{{ s_title }}</h2>
+      <p class="meta">Une seule enquête en {{ series_parts.size }} parties — à lire dans l’ordre.</p>
+    </div>
+    <p class="series-intro">
+      Chaque partie examine un cas distinct, mais ensemble elles décrivent un même
+      mécanisme : comment le coût réel des grands projets publics est repoussé,
+      dilué ou placé hors de la vue du public.
+    </p>
+    <ol class="series-parts">
+      {%- for d in series_parts -%}
+      <li>
+        <a href="{{ d.url | relative_url }}">
+          <span class="series-part-num">Partie {{ d.part }}</span>
+          <span class="series-part-title">{{ d.title | remove: s_title | remove: ", partie " | remove_first: d.part | remove_first: " : " | strip }}</span>
+        </a>
+        {%- if d.summary -%}<p class="series-part-summary">{{ d.summary }}</p>{%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+  {%- endif -%}
+</section>
+
+{%- comment -%} 5. Browse by theme — thematic index {%- endcomment -%}
+<section class="measure">
+  <h2>Parcourir par thème</h2>
+  <ul class="theme-grid">
+    {%- for theme in site.data.themes -%}
+    <li class="theme-card">
+      <h3><a href="{{ theme.fr_url | relative_url }}">{{ theme.fr_label }}</a></h3>
+      <p>{{ theme.fr_desc }}</p>
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+{%- comment -%} 6. Latest (chronological) — reverse-chron feed across all themes {%- endcomment -%}
+<section class="measure">
+  <h2>Derniers ajouts</h2>
+  {%- comment -%} Editorial collections carry a reliable `date`; record entries use
+      `doc_date` and are a separate document archive, so they are excluded here. {%- endcomment -%}
+  {%- assign fr_dossiers = site.dossiers | where: "lang", "fr" -%}
+  {%- assign fr_explainers = site.explainers | where: "lang", "fr" -%}
+  {%- assign latest = fr_dossiers | concat: fr_explainers | sort: "date" | reverse -%}
+  {%- if latest.size > 0 -%}
   <ul class="card-list">
-    {%- for d in dossiers limit: 4 -%}
+    {%- for item in latest limit: 5 -%}
     <li>
-      {%- if d.theme -%}<span class="pill">{{ d.theme }}</span>{%- endif -%}
-      <h3><a href="{{ d.url | relative_url }}">{{ d.title }}</a></h3>
-      {%- if d.summary -%}<p>{{ d.summary }}</p>{%- endif -%}
+      {%- if item.theme -%}<span class="pill">{{ item.theme }}</span>{%- endif -%}
+      <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+      {%- if item.date -%}<p class="meta">{% include localized-date.html date=item.date lang=page.lang %}</p>{%- endif -%}
+      {%- if item.summary -%}<p>{{ item.summary }}</p>{%- elsif item.description -%}<p>{{ item.description | truncate: 160 }}</p>{%- endif -%}
     </li>
     {%- endfor -%}
   </ul>
   <p><a href="{{ '/fr/dossiers/' | relative_url }}">Tous les dossiers →</a></p>
   {%- else -%}
-  <p class="text-muted"><em>Les premiers dossiers paraîtront ici.</em></p>
+  <p class="text-muted"><em>Les premiers contenus paraîtront ici.</em></p>
   {%- endif -%}
 </section>
 
+{%- comment -%} 7. How we work — credibility proposition {%- endcomment -%}
 <section class="measure">
-  <h2>Pour commencer</h2>
+  <div class="how-we-work">
+    <h2>Comment nous travaillons</h2>
+    <ul class="how-we-work__list">
+      <li>Bâti uniquement à partir du registre public.</li>
+      <li>Chaque affirmation sourcée, liée et archivée.</li>
+      <li>Aucune spéculation.</li>
+      <li>Aucun pistage, aucun courriel, aucun compte.</li>
+    </ul>
+    <p class="how-we-work__cta">
+      <a href="{{ '/fr/methodologie/' | relative_url }}">Lire notre méthodologie →</a>
+    </p>
+  </div>
+</section>
+
+{%- comment -%} 8. Follow — RSS {%- endcomment -%}
+<section class="measure">
+  <h2>Suivre</h2>
   <p>
-    Lisez notre <a href="{{ '/fr/methodologie/' | relative_url }}">méthodologie</a>
-    pour comprendre comment nous travaillons.
     Pour rester informé, <a href="{{ '/fr/suivre/' | relative_url }}">suivez-nous par RSS</a> —
     sans courriel, sans compte, sans pistage.
   </p>

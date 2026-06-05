@@ -3,18 +3,6 @@
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div>
-      <h2>{{ t.footer_about }}</h2>
-      <ul>
-        {%- for item in site.data.nav -%}
-          {%- if item.key == 'about' or item.key == 'methodology' or item.key == 'corrections' -%}
-            {%- if lang == 'fr' -%}<li><a href="{{ item.fr_url | relative_url }}">{{ item.fr_label }}</a></li>
-            {%- else -%}<li><a href="{{ item.en_url | relative_url }}">{{ item.en_label }}</a></li>{%- endif -%}
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
-    </div>
-
-    <div>
       <h2>{{ t.footer_follow }}</h2>
       <ul>
         {%- if lang == 'fr' -%}

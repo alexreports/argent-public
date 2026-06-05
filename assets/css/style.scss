@@ -373,6 +373,85 @@ main .wrap > .full { max-width: none; }
 }
 .question-moment .question-moment__cta a:hover { text-decoration: underline; }
 
+/* ---------- Featured series block (homepage) ---------- */
+.series-group--featured {
+  margin-top: 1.5rem;
+  padding-top: 1.4rem;
+  border-top: 2px solid var(--green);
+  border-bottom: 1px solid var(--rule);
+}
+.series-intro {
+  color: var(--ink);
+  margin: 0 0 0.6rem;
+}
+
+/* ---------- Browse by theme (homepage) ---------- */
+.theme-grid {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+.theme-card {
+  margin: 0;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--green);
+  background: var(--bg-alt);
+}
+.theme-card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+}
+.theme-card h3 a { text-decoration: none; color: var(--ink-soft); }
+.theme-card h3 a:hover { color: var(--green); }
+.theme-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ---------- How we work (credibility proposition) ---------- */
+.how-we-work {
+  margin: 2.4rem 0 0;
+  padding: 1.8rem 2rem;
+  background: var(--bg-quote);
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--green);
+}
+.how-we-work h2 { margin: 0 0 0.8rem; }
+.how-we-work__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.how-we-work__list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-family: var(--font-head);
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+.how-we-work__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+.how-we-work__cta {
+  margin: 1.2rem 0 0;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+}
+.how-we-work__cta a { font-weight: 600; text-decoration: none; }
+.how-we-work__cta a:hover { text-decoration: underline; }
+
 /* ---------- Dossier 4-part structure ---------- */
 .dossier-section {
   margin: 2.2rem 0;
