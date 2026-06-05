@@ -789,6 +789,340 @@ main .wrap > .full { max-width: none; }
   .series-nav { flex-direction: column; }
 }
 
+/* ============================================================
+   FLOWCHART COMPONENTS
+   HTML-based diagrams: decision trees, timelines, process flows
+   ============================================================ */
+
+/* ---------- Base flowchart container ---------- */
+.flowchart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 2.5rem auto;
+  padding: 2rem 1rem;
+  max-width: 56rem;
+  background: var(--bg-alt);
+  border-radius: 6px;
+  border-left: 4px solid var(--green);
+}
+
+.flowchart-title {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+/* ---------- Flow nodes (boxes) ---------- */
+.flow-node {
+  background: var(--bg);
+  border: 2px solid var(--ink-soft);
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  min-width: 180px;
+  max-width: 280px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+.flow-node:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+.flow-node strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--ink);
+}
+
+.flow-node .note {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+/* Node variants */
+.flow-node.start {
+  border-color: var(--green);
+  border-width: 3px;
+  background: linear-gradient(to bottom, var(--bg), #f1f4f2);
+}
+
+.flow-node.end {
+  border-color: var(--green);
+  background: #f1f4f2;
+  font-weight: 600;
+}
+
+.flow-node.proper {
+  border-color: var(--green);
+  background: #f1f8f4;
+}
+
+.flow-node.irregular {
+  border-color: #c41e3a;
+  background: #fef5f6;
+}
+
+.flow-node.warning {
+  border-color: #d4a000;
+  background: #fffbf0;
+}
+
+.flow-node.theoretical {
+  border-color: var(--rule-strong);
+  background: var(--bg-alt);
+  opacity: 0.7;
+}
+
+/* ---------- Decision diamonds ---------- */
+.flow-decision {
+  position: relative;
+  background: #fffbf0;
+  border: 2px solid #d4a000;
+  padding: 1.25rem 1.75rem;
+  min-width: 160px;
+  max-width: 240px;
+  text-align: center;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+  box-shadow: 0 2px 6px rgba(212, 160, 0, 0.15);
+}
+
+.flow-decision strong {
+  display: block;
+  font-weight: 700;
+}
+
+/* ---------- Process rectangles (distinct from nodes) ---------- */
+.flow-process {
+  background: var(--bg);
+  border: 2px solid var(--blue);
+  border-radius: 4px;
+  padding: 0.9rem 1.5rem;
+  text-align: center;
+  min-width: 200px;
+  max-width: 300px;
+  font-family: var(--font-head);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0,87,183,0.1);
+}
+
+/* ---------- Arrows and connectors ---------- */
+.flow-arrow {
+  font-size: 1.75rem;
+  color: var(--ink-soft);
+  line-height: 1;
+  user-select: none;
+}
+
+.flow-arrow.thick {
+  font-weight: 700;
+  color: var(--green);
+}
+
+.flow-arrow.faded {
+  opacity: 0.4;
+}
+
+/* Label on arrows */
+.flow-arrow-label {
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: -0.25rem 0;
+}
+
+/* ---------- Branching layout ---------- */
+.flow-branches {
+  display: flex;
+  gap: 2.5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0.5rem 0;
+}
+
+.flow-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  max-width: 300px;
+}
+
+/* Labels above branches */
+.flow-branch-label {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  margin-bottom: 0.25rem;
+}
+
+.flow-branch-label.yes {
+  background: #f1f8f4;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.flow-branch-label.no {
+  background: #fef5f6;
+  color: #c41e3a;
+  border: 1px solid #c41e3a;
+}
+
+/* ---------- Convergence point ---------- */
+.flow-convergence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+/* Connector lines (visual indication of convergence) */
+.flow-convergence::before {
+  content: '';
+  width: 2px;
+  height: 1.5rem;
+  background: linear-gradient(to bottom, transparent, var(--ink-soft));
+}
+
+/* ---------- Outcome boxes ---------- */
+.flow-outcome {
+  background: var(--bg-quote);
+  border: 2px solid var(--green);
+  border-radius: 8px;
+  padding: 1.25rem 2rem;
+  text-align: center;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 400px;
+  box-shadow: 0 3px 10px rgba(18, 91, 56, 0.12);
+}
+
+.flow-outcome.negative {
+  border-color: #c41e3a;
+  background: #fef5f6;
+  box-shadow: 0 3px 10px rgba(196, 30, 58, 0.12);
+}
+
+/* ---------- Timeline variant (vertical linear flow) ---------- */
+.flowchart.timeline {
+  align-items: flex-start;
+  padding-left: 2rem;
+  border-left: 3px solid var(--green);
+  background: transparent;
+}
+
+.flowchart.timeline .flow-node {
+  align-self: flex-start;
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+.flowchart.timeline .flow-node::before {
+  content: '';
+  position: absolute;
+  left: -2.25rem;
+  top: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--green);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.flowchart.timeline .flow-arrow {
+  align-self: flex-start;
+  margin-left: 1.5rem;
+}
+
+/* ---------- Responsive behavior ---------- */
+@media (max-width: 768px) {
+  .flowchart {
+    padding: 1.5rem 0.75rem;
+    gap: 1rem;
+  }
+  
+  .flow-node {
+    min-width: 140px;
+    max-width: 240px;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.88rem;
+  }
+  
+  .flow-decision {
+    min-width: 130px;
+    max-width: 200px;
+    padding: 1rem 1.5rem;
+    font-size: 0.88rem;
+  }
+  
+  .flow-branches {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .flow-branch {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .flow-arrow {
+    font-size: 1.5rem;
+  }
+  
+  .flowchart.timeline {
+    padding-left: 1rem;
+  }
+  
+  .flowchart.timeline .flow-node {
+    margin-left: 1rem;
+  }
+}
+
+/* ---------- Print styles for flowcharts ---------- */
+@media print {
+  .flowchart {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .flow-node, .flow-decision, .flow-outcome {
+    box-shadow: none;
+    border-color: #000 !important;
+  }
+}
+
 /* ---------- Print ---------- */
 @media print {
   .site-nav, .lang-toggle, .site-footer, .skip-link, .feed-btn { display: none; }
