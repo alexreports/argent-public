@@ -42,7 +42,7 @@ alt_lang_url: /en/
 
 {%- comment -%} 4. Series block — all three parts together, in reading order {%- endcomment -%}
 <section class="measure">
-  {%- assign series_parts = site.dossiers | where: "lang", "fr" | where: "series", "cout-invisible" | sort: "part" -%}
+  {%- assign series_parts = site.dossiers | where: "lang", "fr" | where: "series", "grand-livre-vert" | sort: "part" -%}
   {%- if series_parts.size > 0 -%}
   {%- assign s_title = series_parts[0].series_title -%}
   <div class="series-group series-group--featured">
