@@ -27,23 +27,22 @@ alt_lang_url: /en/
 <section class="measure">
   <div class="question-moment">
     <span class="question-moment__label">Enquête en cours</span>
-    <h2><a href="{{ '/fr/dossiers/cout-invisible-partie-1/' | relative_url }}">Le coût invisible : pourquoi les grands projets publics échouent toujours de la même manière</a></h2>
+    <h2><a href="{{ '/fr/dossiers/fracturation/' | relative_url }}">Le Grand Livre vert : comment la transition énergétique dépense l'argent public au Québec</a></h2>
     <p>
-      Les grands projets technologiques publics du Québec échouent de façon répétée,
-      selon les mêmes schémas, sous différents gouvernements. Ce n'est plus une
-      affirmation de critiques — c'est la conclusion écrite des propres organismes de
-      surveillance de la province. À quatre mois d'une élection générale, notre série
-      <em>Le coût invisible</em> met ces questions au dossier public.
+      Le Québec a interdit la fracturation — puis a continué d'en acheter le produit.
+      La province prétend mener la transition verte en Amérique du Nord, mais le dossier public
+      raconte une histoire plus complexe. Notre série <em>Le Grand Livre vert</em> suit l'argent
+      à travers la politique énergétique, les sorties de pipelines et les écarts de quotas.
     </p>
     <p class="question-moment__cta">
-      <a href="{{ '/fr/dossiers/cout-invisible-partie-1/' | relative_url }}">Commencez ici — Partie 1 : Le scénario que le Québec répète →</a>
+      <a href="{{ '/fr/dossiers/fracturation/' | relative_url }}">Commencez ici — Partie 1 : L'importation par fracturation →</a>
     </p>
   </div>
 </section>
 
 {%- comment -%} 4. Series block — all three parts together, in reading order {%- endcomment -%}
 <section class="measure">
-  {%- assign series_parts = site.dossiers | where: "lang", "fr" | where: "series", "cout-invisible" | sort: "part" -%}
+  {%- assign series_parts = site.dossiers | where: "lang", "fr" | where: "series", "grand-livre-vert" | sort: "part" -%}
   {%- if series_parts.size > 0 -%}
   {%- assign s_title = series_parts[0].series_title -%}
   <div class="series-group series-group--featured">
@@ -53,9 +52,9 @@ alt_lang_url: /en/
       <p class="meta">Une seule enquête en {{ series_parts.size }} parties — à lire dans l’ordre.</p>
     </div>
     <p class="series-intro">
-      Chaque partie examine un cas distinct, mais ensemble elles décrivent un même
-      mécanisme : comment le coût réel des grands projets publics est repoussé,
-      dilué ou placé hors de la vue du public.
+      Chaque partie suit l'argent à travers la transition énergétique du Québec —
+      de l'interdiction de la fracturation au gaz encore dans les conduits, et aux
+      cibles renouvelables ratées en chemin.
     </p>
     <ol class="series-parts">
       {%- for d in series_parts -%}
