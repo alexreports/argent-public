@@ -1,0 +1,43 @@
+# ============================================================
+#  Series colour index — one distinctive colour per investigation.
+#
+#  Each investigative series gets its own badge/pill/tag colour so
+#  readers can tell, at a glance, which investigation a dossier
+#  belongs to.
+#
+#  `key` MUST match the `series:` value used in dossier front
+#  matter (e.g. series: cout-invisible). The colour rules in
+#  assets/css/style.scss are generated automatically from this
+#  file, so adding a new series here is all that is needed to give
+#  it its own colour scheme — no CSS edits required.
+#
+#  To add a future series, copy a block below and change:
+#    key        : the slug used in front matter `series:`
+#    fr_title   : French series name (for reference)
+#    en_title   : English series name (for reference)
+#    color      : main badge / accent colour (hex)
+#    color_dark : darker shade for hover / deep accents (hex)
+#    tint       : very light wash for backgrounds / left rules (hex)
+# ============================================================
+
+- key: grand-livre-vert
+  fr_title: "Le Grand Livre vert"
+  en_title: "The Green Ledger"
+  color: "#125b38"        # brand green — the "green" ledger
+  color_dark: "#0e472b"
+  tint: "#eaf3ee"
+
+- key: cout-invisible
+  fr_title: "Le coût invisible"
+  en_title: "The Cost You Cannot See"
+  color: "#8a1f2b"        # deep crimson — the cost in red ink
+  color_dark: "#6d1822"
+  tint: "#f7ecec"
+
+# ---- Example reserved palette for future series (uncomment & edit) ----
+# - key: example-future-series
+#   fr_title: "Titre de la série"
+#   en_title: "Series Title"
+#   color: "#5b2a86"      # indigo
+#   color_dark: "#46206a"
+#   tint: "#efe9f5"

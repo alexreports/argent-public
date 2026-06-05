@@ -75,7 +75,7 @@ layout: default
 
   {%- if page.theme -%}<span class="pill">{{ page.theme }}</span>{%- endif -%}
   {%- if page.series_title and page.part -%}
-  <span class="pill pill--muted">{{ page.series_title }} · {{ t.part_label | default: "Part" }} {{ page.part }}</span>
+  <span class="pill{% if page.series %} pill--series-{{ page.series }}{% else %} pill--muted{% endif %}">{{ page.series_title }} · {{ t.part_label | default: "Part" }} {{ page.part }}</span>
   {%- endif -%}
   <h1>{{ page.title }}</h1>
 

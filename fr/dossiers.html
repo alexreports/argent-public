@@ -74,7 +74,7 @@ alt_lang_url: /en/dossiers/
     {%- endfor -%}
 
     {%- if s_title -%}
-    <div class="series-group">
+    <div class="series-group series-group--{{ s }}">
       <div class="series-header">
         {%- if s_theme -%}<span class="pill">{{ s_theme }}</span>{%- endif -%}
         <h2>{{ s_title }}</h2>

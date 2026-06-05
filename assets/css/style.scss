@@ -265,6 +265,41 @@ main .wrap > .full { max-width: none; }
 .pill--blue { background: var(--blue); }
 .pill--muted { background: var(--muted); }
 
+/* ---------- Per-series colour coding (data-driven) ----------
+   Generated from _data/series.yml. Each investigative series gets
+   its own badge/pill colour plus matching accents on the dossier
+   listing (header title, part numbers, left rule). Add a series to
+   _data/series.yml and its colour rules appear here automatically —
+   no manual CSS edits required. */
+{%- for s in site.data.series -%}
+/* {{ s.en_title }} / {{ s.fr_title }} */
+.pill--series-{{ s.key }} {
+  background: {{ s.color }};
+  color: #fff;
+}
+.series-badge--{{ s.key }} {
+  color: {{ s.color }};
+  border-color: {{ s.color }};
+}
+.series-group--{{ s.key }} .series-header h2,
+.series-group--{{ s.key }} .series-header h2 a {
+  color: {{ s.color }};
+}
+.series-group--{{ s.key }} .series-part-num {
+  color: {{ s.color }};
+}
+.series-group--{{ s.key }} .series-parts > li a:hover .series-part-title {
+  color: {{ s.color_dark }};
+}
+.series-group--{{ s.key }} {
+  border-left: 3px solid {{ s.color }};
+  padding-left: 1.1rem;
+}
+.series-group--featured.series-group--{{ s.key }} {
+  border-top-color: {{ s.color }};
+}
+{%- endfor -%}
+
 /* ---------- Card list (dossiers/explainers/record) ---------- */
 .card-list { list-style: none; margin: 1.5rem 0 0; padding: 0; }
 .card-list > li {

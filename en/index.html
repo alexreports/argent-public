@@ -44,7 +44,7 @@ alt_lang_url: /fr/
   {%- assign series_parts = site.dossiers | where: "lang", "en" | where: "series", "grand-livre-vert" | sort: "part" -%}
   {%- if series_parts.size > 0 -%}
   {%- assign s_title = series_parts[0].series_title -%}
-  <div class="series-group series-group--featured">
+  <div class="series-group series-group--featured series-group--{{ series_parts[0].series }}">
     <div class="series-header">
       {%- if series_parts[0].theme -%}<span class="pill">{{ series_parts[0].theme }}</span>{%- endif -%}
       <h2>{{ s_title }}</h2>
