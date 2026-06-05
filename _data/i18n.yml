@@ -31,6 +31,13 @@ fr:
   footer_legal: "Mentions"
   rights: "Contenu publié à partir du registre public. Sources liées et archivées."
   no_tracking: "Ce site n’utilise aucun témoin, aucun outil d’analyse et ne collecte aucune donnée."
+  # New visual/SEO keys
+  part_label: "Partie"
+  reading_time: "de lecture"
+  key_figures_label: "Chiffres clés"
+  previous_part: "Précédent"
+  next_part: "Suivant"
+  series_nav_label: "Navigation de la série"
 en:
   skip_to_content: "Skip to content"
   language: "Language"
@@ -60,3 +67,11 @@ en:
   footer_legal: "Notices"
   rights: "Published from the public record. Sources are linked and archived."
   no_tracking: "This site uses no cookies, no analytics, and collects no data."
+
+  # New visual/SEO keys
+  part_label: "Part"
+  reading_time: "read"
+  key_figures_label: "Key figures"
+  previous_part: "Previous"
+  next_part: "Next"
+  series_nav_label: "Series navigation"

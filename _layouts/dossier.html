@@ -5,20 +5,103 @@ layout: default
 {%- assign t = site.data.i18n[lang] -%}
 {%- if lang == 'fr' -%}{%- assign index_url = '/fr/dossiers/' -%}{%- else -%}{%- assign index_url = '/en/dossiers/' -%}{%- endif -%}
 
+{%- comment -%} ===== JSON-LD Structured Data ===== {%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "InvestigativeArticle",
+  "headline": {{ page.title | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ page.author | default: "Argent Public" | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Argent Public",
+    "url": "https://argentpublic.org",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ '/assets/images/logo.png' | absolute_url }}"
+    }
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.updated | default: page.date | date_to_xmlschema }}",
+  "description": {{ page.description | default: page.summary | jsonify }},
+  "inLanguage": "{{ page.lang }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  }{% if page.series_title %},
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": {{ page.series_title | jsonify }}
+  }{% endif %}{% if page.image %},
+  "image": "{{ page.image | absolute_url }}"{% endif %}
+}
+</script>
+
+{%- comment -%} ===== Breadcrumb Schema ===== {%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ t.footer_about | default: 'Home' }}",
+      "item": "{{ '/' | append: lang | append: '/' | absolute_url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ t.back_to_dossiers | remove: '← ' }}",
+      "item": "{{ index_url | absolute_url }}"
+    }{% if page.series_title %},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ page.series_title | jsonify }},
+      "item": "{{ page.url | absolute_url }}"
+    }{% endif %}
+  ]
+}
+</script>
+
 <article class="dossier measure">
   <p class="meta">
     <a href="{{ index_url | relative_url }}">{{ t.back_to_dossiers }}</a>
   </p>
 
   {%- if page.theme -%}<span class="pill">{{ page.theme }}</span>{%- endif -%}
+  {%- if page.series_title and page.part -%}
+  <span class="pill pill--muted">{{ page.series_title }} · {{ t.part_label | default: "Part" }} {{ page.part }}</span>
+  {%- endif -%}
   <h1>{{ page.title }}</h1>
 
   <p class="meta">
     {%- if page.date -%}{{ t.published }} {% include localized-date.html date=page.date lang=lang %}{%- endif -%}
     {%- if page.updated -%}<span class="sep">·</span>{{ t.updated }} {% include localized-date.html date=page.updated lang=lang %}{%- endif -%}
+    {%- if page.author -%}<span class="sep">·</span>{{ page.author }}{%- endif -%}
+    {%- assign words = content | number_of_words -%}
+    {%- assign minutes = words | divided_by: 200 -%}
+    {%- if minutes < 1 -%}{%- assign minutes = 1 -%}{%- endif -%}
+    <span class="sep">·</span><span class="reading-time">{{ minutes }} min {{ t.reading_time | default: "read" }}</span>
   </p>
 
   {%- if page.summary -%}<p class="lede">{{ page.summary }}</p>{%- endif -%}
+
+  {%- comment -%} ===== Key-figure stat cards ===== {%- endcomment -%}
+  {%- if page.key_figures and page.key_figures.size > 0 -%}
+  <ul class="key-figures" aria-label="{{ t.key_figures_label | default: 'Key figures' }}">
+    {%- for fig in page.key_figures -%}
+    <li class="key-figure">
+      <span class="key-figure__number">{{ fig.number }}</span>
+      <span class="key-figure__label">{{ fig.label }}</span>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
 
   {%- comment -%} ===== 4-part structure: Question → Evidence → Cost → Change ===== {%- endcomment -%}
   {%- if page.question -%}
@@ -57,4 +140,29 @@ layout: default
   {%- endif -%}
 
   {% include sources.html %}
+
+  {%- comment -%} ===== Series navigation (prev / next) ===== {%- endcomment -%}
+  {%- if page.series -%}
+  {%- assign series_all = site.dossiers | where: "lang", lang | where: "series", page.series | sort: "part" -%}
+  {%- if series_all.size > 1 -%}
+  <nav class="series-nav" aria-label="{{ t.series_nav_label | default: 'Series navigation' }}">
+    {%- assign prev_part = page.part | minus: 1 -%}
+    {%- assign next_part = page.part | plus: 1 -%}
+    {%- for d in series_all -%}
+      {%- if d.part == prev_part -%}
+        <a class="series-nav__link" href="{{ d.url | relative_url }}">
+          <span class="series-nav__dir">← {{ t.previous_part | default: "Previous" }}</span>
+          <span class="series-nav__title">{{ t.part_label | default: "Part" }} {{ d.part }}</span>
+        </a>
+      {%- endif -%}
+      {%- if d.part == next_part -%}
+        <a class="series-nav__link series-nav__link--next" href="{{ d.url | relative_url }}">
+          <span class="series-nav__dir">{{ t.next_part | default: "Next" }} →</span>
+          <span class="series-nav__title">{{ t.part_label | default: "Part" }} {{ d.part }}</span>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </nav>
+  {%- endif -%}
+  {%- endif -%}
 </article>
