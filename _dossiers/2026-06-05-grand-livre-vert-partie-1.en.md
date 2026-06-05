@@ -2,14 +2,14 @@
 layout: "dossier"
 lang: "en"
 ref: "grand-livre-vert-partie-1"
-title: "**The Monopoly and Its Owners**"
+title: "The Monopoly and Its Owners"
 slug: "grand-livre-vert-partie-1"
 permalink: "/en/dossiers/grand-livre-vert-partie-1/"
 alt_lang_url: "/fr/dossiers/grand-livre-vert-partie-1/"
 date: "2026-06-05"
 series: "grand-livre-vert"
 series_title: "The Green Ledger"
-part: 1
+part: 4
 ---
 
 PUBLICITÉ – LE GRAND LIVRE VERT, PARTIE 4
@@ -40,30 +40,30 @@ This part addresses a structural question the public record now permits us to as
      
 8. Énergir also operates across the border Énergir owns Vermont Gas Systems, the sole gas distributor in the state of Vermont. Énergir also owns Green Mountain Power, the dominant electricity distributor in Vermont, serving approximately 70 percent of Vermont residents. The same ownership structure that owns Énergir in Quebec, CDPQ at 80.9 percent and Fonds de solidarité FTQ at 19.1 percent, sits behind both Vermont entities.
 
-\<div class="flowchart"\>  
-  \<h3 class="flowchart-title"\>How Quebec's regulated gas monopoly is owned\</h3\>  
-  \<div class="flow-node start"\>  
+<div class="flowchart">  
+  <h3 class="flowchart-title">How Quebec's regulated gas monopoly is owned</h3>  
+  <div class="flow-node start">  
     Caisse de dépôt et placement du Québec, 80.9%, and Fonds de solidarité FTQ, 19.1%  
-  \</div\>  
-  \<div class="flow-arrow"\>↓\</div\>  
-  \<div class="flow-node"\>  
+  </div>  
+  <div class="flow-arrow">↓</div>  
+  <div class="flow-node">  
     Trencap L.P., owns 100% of Noverco  
-  \</div\>  
-  \<div class="flow-arrow"\>↓\</div\>  
-  \<div class="flow-node"\>  
+  </div>  
+  <div class="flow-arrow">↓</div>  
+  <div class="flow-node">  
     Noverco Inc., owns 100% of Énergir  
-  \</div\>  
-  \<div class="flow-arrow"\>↓\</div\>  
-  \<div class="flow-node"\>  
+  </div>  
+  <div class="flow-arrow">↓</div>  
+  <div class="flow-node">  
     Énergir L.P., general partner Énergir Inc.  
-  \</div\>  
-  \<div class="flow-arrow"\>↓\</div\>  
-  \<div class="flow-convergence"\>  
-    \<div class="flow-outcome negative"\>  
+  </div>  
+  <div class="flow-arrow">↓</div>  
+  <div class="flow-convergence">  
+    <div class="flow-outcome negative">  
       Regulated distributor of roughly 97% of the natural gas consumed in Quebec  
-    \</div\>  
-  \</div\>  
-\</div\>
+    </div>  
+  </div>  
+</div>
 
 This is the structure. A regulated near-monopoly that touches almost every Quebec home, farm, and business connected to the gas network is owned by two public institutional investors whose mandates include growing the value of public retirement savings and union savings.
 
