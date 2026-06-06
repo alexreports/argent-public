@@ -48,22 +48,19 @@ GNR Shefford, GNRShefford.ca
 
 _Il s'agit de la Partie 3 du Grand Livre Vert, une série d'enquêtes en cours portant sur Énergir, le programme de gaz renouvelable du Québec et les fonds publics qui les sous-tendent. De nouvelles révélations sont à venir._
 
+<section class="references" aria-labelledby="references-heading" markdown="1">
+
 ## Références et sources
 
-(1) Régie de l'énergie du Québec, règlement concernant la quantité de gaz naturel renouvelable devant être livrée par un distributeur; cibles de livraison: 1 % d'ici 2020, 2 % d'ici 2023, 5 % d'ici 2025.
+1. Régie de l'énergie du Québec, règlement concernant la quantité de gaz naturel renouvelable devant être livrée par un distributeur; cibles de livraison: 1 % d'ici 2020, 2 % d'ici 2023, 5 % d'ici 2025.
+2. Régie de l'énergie du Québec, dossier R-4320-2025, décisions et mémoires d'intervenants déposés au dossier; données de livraison de GNR: 0,6 % du volume du réseau en 2022-2023; 33,7 millions de m³ livrés en 2023-2024 contre une cible de 123,5 millions de m³.
+3. Gouvernement du Québec, Programme de soutien à la production de gaz naturel renouvelable (PSPGNR), cadre normatif, version approuvée le 4 juillet 2022; allocation initiale de 25 M$; modifications en 2021 et 2022.
+4. Régie de l'énergie du Québec, dossier R-4320-2025, mémoires d'intervenants, incluant les observations de la FCEI et la position du gouvernement du Québec sur le gaz renouvelable produit localement.
+5. Gouvernement du Québec, lancement du PSPGNR en novembre 2020.
+6. Régie de l'énergie du Québec, décision D-2026-037, version publiée partiellement caviardée.
+7. Gouvernement du Québec, projet de règlement, cible de GNR portée à 10 % d'ici 2030, Gazette officielle du Québec, juin 2022.
+8. Gouvernement du Québec, communiqué du 14 juillet 2022, prolongation et modification du PSPGNR.
 
-(2) Régie de l'énergie du Québec, dossier R-4320-2025, décisions et mémoires d'intervenants déposés au dossier; données de livraison de GNR: 0,6 % du volume du réseau en 2022-2023; 33,7 millions de m³ livrés en 2023-2024 contre une cible de 123,5 millions de m³.
+<p class="references-note">Ce contenu a été produit par GNR Shefford. Toutes les données proviennent de sources accessibles au public.</p>
 
-(3) Gouvernement du Québec, Programme de soutien à la production de gaz naturel renouvelable (PSPGNR), cadre normatif, version approuvée le 4 juillet 2022; allocation initiale de 25 M$; modifications en 2021 et 2022.
-
-(4) Régie de l'énergie du Québec, dossier R-4320-2025, mémoires d'intervenants, incluant les observations de la FCEI et la position du gouvernement du Québec sur le gaz renouvelable produit localement.
-
-(5) Gouvernement du Québec, lancement du PSPGNR en novembre 2020.
-
-(6) Régie de l'énergie du Québec, décision D-2026-037, version publiée partiellement caviardée.
-
-(7) Gouvernement du Québec, projet de règlement, cible de GNR portée à 10 % d'ici 2030, Gazette officielle du Québec, juin 2022.
-
-(8) Gouvernement du Québec, communiqué du 14 juillet 2022, prolongation et modification du PSPGNR.
-
-_Ce contenu a été produit par GNR Shefford. Toutes les données proviennent de sources accessibles au public._
+</section>

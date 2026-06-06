@@ -48,22 +48,19 @@ GNR Shefford, GNRShefford.ca
 
 _This is Part 3 of the Green Ledger, an ongoing series of investigations concerning Énergir, Quebec's renewable natural gas program, and the public funds that underpin them. Further revelations are to come._
 
+<section class="references" aria-labelledby="references-heading" markdown="1">
+
 ## References and sources
 
-(1) Régie de l'énergie du Québec, regulation concerning the quantity of renewable natural gas to be delivered by a distributor; delivery targets: 1 % by 2020, 2 % by 2023, 5 % by 2025.
+1. Régie de l'énergie du Québec, regulation concerning the quantity of renewable natural gas to be delivered by a distributor; delivery targets: 1 % by 2020, 2 % by 2023, 5 % by 2025.
+2. Régie de l'énergie du Québec, file R-4320-2025, decisions and intervenor briefs filed in the record; RNG delivery data: 0.6 % of network volume in 2022-2023; 33.7 million m³ delivered in 2023-2024 against a target of 123.5 million m³.
+3. Government of Quebec, Renewable Natural Gas Production Support Program (PSPGNR), normative framework, version approved 4 July 2022; initial allocation of 25 M$; amendments in 2021 and 2022.
+4. Régie de l'énergie du Québec, file R-4320-2025, intervenor briefs, including the observations of the FCEI and the position of the Government of Quebec on locally produced renewable gas.
+5. Government of Quebec, launch of the PSPGNR in November 2020.
+6. Régie de l'énergie du Québec, decision D-2026-037, version published partially redacted.
+7. Government of Quebec, draft regulation, RNG target raised to 10 % by 2030, Gazette officielle du Québec, June 2022.
+8. Government of Quebec, press release of 14 July 2022, extension and amendment of the PSPGNR.
 
-(2) Régie de l'énergie du Québec, file R-4320-2025, decisions and intervenor briefs filed in the record; RNG delivery data: 0.6 % of network volume in 2022-2023; 33.7 million m³ delivered in 2023-2024 against a target of 123.5 million m³.
+<p class="references-note">This content was produced by GNR Shefford. All data are drawn from publicly accessible sources.</p>
 
-(3) Government of Quebec, Renewable Natural Gas Production Support Program (PSPGNR), normative framework, version approved 4 July 2022; initial allocation of 25 M$; amendments in 2021 and 2022.
-
-(4) Régie de l'énergie du Québec, file R-4320-2025, intervenor briefs, including the observations of the FCEI and the position of the Government of Quebec on locally produced renewable gas.
-
-(5) Government of Quebec, launch of the PSPGNR in November 2020.
-
-(6) Régie de l'énergie du Québec, decision D-2026-037, version published partially redacted.
-
-(7) Government of Quebec, draft regulation, RNG target raised to 10 % by 2030, Gazette officielle du Québec, June 2022.
-
-(8) Government of Quebec, press release of 14 July 2022, extension and amendment of the PSPGNR.
-
-_This content was produced by GNR Shefford. All data are drawn from publicly accessible sources._
+</section>

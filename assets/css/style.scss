@@ -504,16 +504,24 @@ main .wrap > .full { max-width: none; }
 }
 
 /* ---------- Source / citation block ---------- */
-.sources {
+.sources,
+.references {
   margin-top: 2.5rem;
   padding-top: 1.2rem;
   border-top: 1px solid var(--rule);
-  font-size: 1rem;
+  font-size: 0.9em;
+  color: var(--muted);
 }
-.sources h2 { font-size: 1.1rem; }
-.sources ol { padding-left: 1.4em; }
-.sources li { margin: 0.5em 0; }
-.source-links { font-family: var(--font-head); font-size: 0.85rem; }
+.sources h2,
+.references h2 { font-size: 1.1rem; color: var(--ink); }
+.sources ol,
+.sources ul,
+.references ol,
+.references ul { padding-left: 1.4em; }
+.sources li,
+.references li { margin: 0.5em 0; }
+.references .references-note { margin-top: 1rem; font-style: italic; }
+.source-links { font-family: var(--font-head); font-size: 0.85em; }
 .source-links a { white-space: nowrap; }
 
 /* ---------- Record entry table-ish ---------- */
@@ -762,18 +770,6 @@ main .wrap > .full { max-width: none; }
   font-size: 0.95rem;
   color: var(--muted);
   margin-top: 0.3rem;
-}
-
-/* ---------- Drop cap ---------- */
-.dossier-body > p:first-of-type::first-letter {
-  float: left;
-  font-family: var(--font-head);
-  font-size: 3.6em;
-  line-height: 0.8;
-  padding-right: 0.08em;
-  padding-top: 0.06em;
-  color: var(--green-dark);
-  font-weight: 700;
 }
 
 /* ---------- Series navigation (prev/next) ---------- */

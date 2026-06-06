@@ -10,13 +10,9 @@ date: "2026-06-05"
 series: "grand-livre-vert"
 series_title: "The Green Ledger"
 part: 4
+theme: "Energy"
+summary: "Quebec's dominant gas distributor is wholly owned by two public institutional investors. The regulator sets the rates those owners earn."
 ---
-
-PUBLICITÉ – LE GRAND LIVRE VERT, PARTIE 4
-
-# **The Monopoly and Its Owners**
-
-## **Quebec's dominant gas distributor is wholly owned by two public institutional investors. The regulator sets the rates those owners earn.**
 
 Parts 1, 2, and 3 of this series established what flows through the Quebec gas network, what Énergir extracted from a transborder fossil pipeline before selling it in 2024, and how far short the regulated renewable gas targets have fallen.  
 
@@ -81,4 +77,19 @@ agriculteur GNR Shefford
 
 *This is Part 4 of Le Grand Livre Vert. Further parts will follow. You may read the entire series on the website.* 
 
-References and sources. La Caisse de dépôt et placement du Québec press release of January 18, 2022 titled CDPQ increases its stake in Énergir, making the company entirely Québec-owned. Enbridge press release of December 30, 2021 confirming sale of its 38.89 percent Noverco interest for $1.14 billion. CDPQ press release of September 2024 on the additional $575 million joint investment with Fonds de solidarité FTQ. CDPQ press release of January 9, 2018 announcing Éric Lachance's appointment at Énergir. Énergir corporate governance, management team, and board of directors pages, energir.com. Énergir Inc. consolidated financial statements for fiscal year 2023, filed via SEDAR+. Vermont Public Utility Commission filings on Vermont Gas Systems and Green Mountain Power ownership. Régie de l'énergie of Quebec, chapter R-6.01. All data drawn from publicly accessible sources. This content was produced by GNR Shefford. The editorial teams of the publishing newspapers did not participate in its production.  
+<section class="references" aria-labelledby="references-heading" markdown="1">
+
+## References and sources
+
+- La Caisse de dépôt et placement du Québec press release of January 18, 2022 titled *CDPQ increases its stake in Énergir, making the company entirely Québec-owned*.
+- Enbridge press release of December 30, 2021 confirming sale of its 38.89 percent Noverco interest for $1.14 billion.
+- CDPQ press release of September 2024 on the additional $575 million joint investment with Fonds de solidarité FTQ.
+- CDPQ press release of January 9, 2018 announcing Éric Lachance's appointment at Énergir.
+- Énergir corporate governance, management team, and board of directors pages, energir.com.
+- Énergir Inc. consolidated financial statements for fiscal year 2023, filed via SEDAR+.
+- Vermont Public Utility Commission filings on Vermont Gas Systems and Green Mountain Power ownership.
+- Régie de l'énergie of Quebec, chapter R-6.01.
+
+<p class="references-note">All data drawn from publicly accessible sources. This content was produced by GNR Shefford. The editorial teams of the publishing newspapers did not participate in its production.</p>
+
+</section>  
