@@ -56,8 +56,9 @@ sass:
 # ----- Plugins (GitHub Pages compatible) ---------------------
 # NOTE: we generate our own bilingual Atom feeds (/fr/feed.xml and
 # /en/feed.xml), so jekyll-feed is intentionally NOT enabled here.
-# MAINTENANCE MODE: plugins disabled
-plugins: []
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 # ----- Collections -------------------------------------------
 # Each collection holds BOTH languages. Documents declare their
@@ -97,7 +98,6 @@ defaults:
       layout: default
 
 # ----- Exclusions --------------------------------------------
-# MAINTENANCE MODE: all content excluded — Coming Soon page only
 exclude:
   - README.md
   - CONTRIBUTING.md
@@ -112,17 +112,6 @@ exclude:
   - LICENSE
   - .gitignore
   - node_modules
-  - en
-  - fr
-  - _dossiers
-  - _explainers
-  - _record
-  - _drafts
-  - _data
-  - _includes
-  - _layouts
-  - _sass
-  - assets
 
 # Keep these out of the build's "pages" loop but still publish them.
 include:
