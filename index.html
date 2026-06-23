@@ -1,18 +1,165 @@
 ---
 layout: null
 sitemap: false
+permalink: /
 ---
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Argent Public</title>
-  <link rel="canonical" href="{{ '/fr/' | absolute_url }}">
-  <meta http-equiv="refresh" content="0; url={{ '/fr/' | relative_url }}">
-  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Argent Public — Bientôt disponible / Coming Soon</title>
+  <meta name="description" content="Argent Public documente les dépenses publiques au Québec. Le site sera bientôt disponible.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #125b38;
+      --green-dark: #0e472b;
+      --ink: #111111;
+      --ink-soft: #2e3a47;
+      --muted: #5a6470;
+      --bg: #ffffff;
+      --bg-alt: #f6f7f8;
+      --rule: #d8dde2;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Lexend", system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15em;
+      margin-bottom: 2.5rem;
+    }
+    .logo-mark .pillar {
+      width: 4px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+    .logo-mark .pillar:nth-child(1) { height: 32px; }
+    .logo-mark .pillar:nth-child(2) { height: 44px; }
+    .logo-mark .pillar:nth-child(3) { height: 38px; }
+    .logo-mark .pillar:nth-child(4) { height: 50px; }
+    .logo-mark .pillar:nth-child(5) { height: 38px; }
+    .logo-mark .pillar:nth-child(6) { height: 44px; }
+    .logo-mark .pillar:nth-child(7) { height: 32px; }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 0.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0 0 3rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--green);
+      border: none;
+      border-radius: 2px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .coming-soon {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin: 0 0 1.5rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin: 0 0 1rem;
+    }
+
+    .description-en {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 0 0 3rem;
+      font-style: italic;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-  <p>Argent Public — <a href="{{ '/fr/' | relative_url }}">Français</a> / <a href="{{ '/en/' | relative_url }}">English</a></p>
-  <script>window.location.replace("{{ '/fr/' | relative_url }}");</script>
+  <div class="container">
+    <div class="logo-mark">
+      <span class="pillar"></span>
+      <span class="pillar"></span>
+      <span class="pillar"></span>
+      <span class="pillar"></span>
+      <span class="pillar"></span>
+      <span class="pillar"></span>
+      <span class="pillar"></span>
+    </div>
+
+    <h1>Argent Public</h1>
+    <p class="tagline">Documenter. Comprendre. Rendre des comptes.</p>
+
+    <hr class="divider">
+
+    <p class="coming-soon">Bientôt disponible / Coming Soon</p>
+
+    <p class="description">
+      Argent Public documente les dépenses publiques au Québec — énergie,
+      transition verte et administration publique — à partir du registre public.
+    </p>
+
+    <p class="description-en">
+      Argent Public documents public spending in Quebec — energy,
+      the green transition, and public administration — using the public record.
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2026 Argent Public
+  </footer>
 </body>
 </html>
